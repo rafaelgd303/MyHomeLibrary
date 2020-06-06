@@ -49,7 +49,7 @@
                     @Html.DisplayFor(modelItem => item.Rating)
                 </td>
                 <td>
-                    @Html.ActionLink("Edycja", "Edit") | @Html.ActionLink("Usuń", "Delete")
+                    @Html.ActionLink("Edycja", "Edit") | @Html.ActionLink("Usuń", "Delete", new { id = item.Id})
                 </td>
             </tr>
         }

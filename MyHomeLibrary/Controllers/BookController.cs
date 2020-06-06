@@ -24,6 +24,12 @@ namespace MyHomeLibrary.Controllers
             return View(books);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(Book book)
         {
