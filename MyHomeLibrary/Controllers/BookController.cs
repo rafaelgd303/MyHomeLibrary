@@ -34,19 +34,20 @@ namespace MyHomeLibrary.Controllers
         public IActionResult Create(Book book)
         {
             _booksRepo.AddBook(book);
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult Delete(Book book)
+        public IActionResult Delete(int id)
         {
-            _booksRepo.DeleteBook(book.Id);
-            return Redirect("Index");
+            _booksRepo.DeleteBook(id);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult Edit(Book book)
+        public IActionResult Edit(int id)
         {
+            var book = _booksRepo.FindBook(id);
             return View(book);
         }
 
@@ -54,7 +55,7 @@ namespace MyHomeLibrary.Controllers
         public IActionResult Update(Book book)
         {
             _booksRepo.UpdateBook(book);
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
     }
 }

@@ -34,6 +34,12 @@ namespace MyHomeLibrary.Repositories
             _books.Remove(bookToDelete);
         }
 
+        public Book FindBook(int id)
+        {
+            var bookToUpdate = _books.FirstOrDefault(book => book.Id == id);
+            return bookToUpdate;
+        }
+
         public List<Book> GetBooks()
         {
             return _books;

@@ -12,5 +12,6 @@ namespace MyHomeLibrary.Interfaces
         void AddBook(Book book);
         void DeleteBook(int id);
         void UpdateBook(Book book);
+        Book FindBook(int id);
     }
 }
